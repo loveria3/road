@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>서문 올레 순례 코스 지도</title>
+<meta name="description" content="천주교 제주교구 서문성당 순례길 — 짧은 코스·긴 코스 큰 지도">
+<meta property="og:title" content="서문 올레 순례 코스 지도">
+<meta property="og:description" content="짧은 코스 5.38km · 긴 코스 10.87km — 휴대폰으로 크게 보는 순례길 지도">
+<meta name="theme-color" content="#006FBF">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cover:#006FBF; --short:#1F5FD1; --long:#E0601F;
+  --navy:#1E3A5F; --gold:#B38A45; --wc:#2C7A7B;
+  --ink:#1D2B3A; --sub:#5B6776; --bg:#FBF8F2; --card:#FFFFFF; --line:#E9E2D5;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{font-family:'Noto Sans KR',system-ui,sans-serif;background:var(--bg);color:var(--ink);font-size:18px;line-height:1.55;word-break:keep-all}
+.wrap{max-width:680px;margin:0 auto}
+
+/* 머리 */
+header{background:var(--cover);color:#fff;padding:26px 20px 22px;text-align:center}
+header .eyebrow{font-size:14px;font-weight:500;opacity:.88;letter-spacing:.04em}
+header h1{font-size:30px;font-weight:900;letter-spacing:-.01em;margin-top:2px}
+header p{font-size:15px;opacity:.9;margin-top:6px}
+
+/* 코스 선택 */
+.tabs{position:sticky;top:0;z-index:10;background:rgba(251,248,242,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.tabs .wrap{display:flex;gap:10px;padding:12px 16px}
+.tabs button{flex:1;font:inherit;font-size:19px;font-weight:700;padding:13px 0;border-radius:999px;border:2px solid var(--line);background:#fff;color:var(--sub);cursor:pointer}
+.tabs button small{display:block;font-size:13px;font-weight:500;margin-top:-2px;opacity:.85}
+.tabs button[aria-selected="true"].short{background:var(--short);border-color:var(--short);color:#fff}
+.tabs button[aria-selected="true"].long{background:var(--long);border-color:var(--long);color:#fff}
+
+section{display:none;padding:18px 16px 8px}
+section.on{display:block}
+section[data-k=short]{--c:var(--short)} section[data-k=long]{--c:var(--long)}
+
+.stat{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.stat b{font-size:30px;font-weight:900;color:var(--c)}
+.stat span{font-size:19px;font-weight:700;color:var(--sub)}
+.desc{color:var(--sub);font-size:16px;margin:4px 0 14px}
+
+/* 지도 */
+.map{display:block;width:100%;padding:0;border:0;background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 2px 12px rgba(30,58,95,.10);cursor:zoom-in}
+.map img{display:block;width:100%;height:auto}
+.bigbtn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;margin-top:12px;font:inherit;font-size:20px;font-weight:700;color:#fff;background:var(--c);border:0;border-radius:14px;padding:15px;cursor:pointer}
+.bigbtn svg{width:24px;height:24px}
+.tip{text-align:center;font-size:14px;color:var(--sub);margin-top:6px}
+
+/* 범례 */
+.legend{display:flex;flex-wrap:wrap;gap:8px 16px;margin:20px 0 4px;font-size:14px;color:var(--sub)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+
+/* 걷는 순서 */
+h2{font-size:22px;font-weight:900;margin:22px 0 8px}
+ol.route{list-style:none}
+ol.route li{position:relative;display:grid;grid-template-columns:34px 1fr;column-gap:12px;padding:0 0 18px}
+ol.route li::before{content:"";position:absolute;left:16px;top:30px;bottom:-2px;width:3px;background:var(--c);opacity:.3;border-radius:2px}
+ol.route li:last-child::before{display:none}
+.mk{font-style:normal;width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:16px;color:#fff;background:var(--navy);border:2px solid #fff;box-shadow:0 0 0 1px var(--line);position:relative;z-index:1}
+.mk.gold{background:var(--gold)}
+.mk.wp{background:#fff;border:4px solid var(--c);box-shadow:none;width:22px;height:22px;margin:6px}
+.mk.home{background:var(--c)}
+.mk.home svg{width:18px;height:18px}
+.dist{grid-column:2;font-size:13px;font-weight:700;color:#A8803C;line-height:1.2;margin-bottom:1px}
+.body{grid-column:2}
+.name{font-size:19px;font-weight:700;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.home-name{color:var(--c);font-weight:900}
+.note{font-size:15px;color:var(--sub);margin-top:1px}
+.wc{display:inline-flex;align-items:center;gap:3px;font-size:13px;font-weight:700;color:var(--wc);background:#E6F1F0;border-radius:999px;padding:2px 9px 2px 5px}
+.wc svg{width:16px;height:16px}
+.samebox{font-size:15px;color:var(--sub);background:#fff;border:1px dashed var(--line);border-radius:12px;padding:10px 14px;margin:4px 0 0}
+
+footer{text-align:center;color:var(--sub);font-size:14px;padding:26px 16px 36px}
+
+/* 크게 보기 */
+#viewer{position:fixed;inset:0;z-index:50;background:#15191E;display:none;flex-direction:column;touch-action:none}
+#viewer.on{display:flex}
+#viewer .bar{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;padding-top:max(12px,env(safe-area-inset-top));color:#fff;font-weight:700;font-size:18px}
+#viewer .close{font:inherit;font-size:18px;font-weight:700;background:#fff;color:#15191E;border:0;border-radius:12px;padding:9px 18px}
+#stage{flex:1;overflow:hidden;position:relative}
+#vimg{position:absolute;left:0;top:0;transform-origin:0 0;max-width:none;user-select:none;-webkit-user-drag:none}
+#viewer .ctl{display:flex;gap:12px;justify-content:center;align-items:center;padding:12px;padding-bottom:max(12px,env(safe-area-inset-bottom))}
+#viewer .ctl button{min-width:64px;height:54px;font:inherit;font-size:26px;font-weight:900;border:0;border-radius:14px;background:#fff;color:#15191E}
+#viewer .ctl .fit{font-size:16px;padding:0 14px}
+#viewer .hint{position:absolute;left:50%;bottom:14px;transform:translateX(-50%);background:rgba(0,0,0,.6);color:#fff;font-size:15px;padding:8px 14px;border-radius:999px;white-space:nowrap;transition:opacity .6s}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-wc" viewBox="0 0 24 24"><rect x="1" y="1" width="22" height="22" rx="5" fill="#2C7A7B"/><g fill="#fff"><circle cx="7.6" cy="5.6" r="1.7"/><rect x="5.3" y="8" width="4.6" height="6" rx="1.2"/><rect x="5.9" y="13" width="1.4" height="6"/><rect x="8" y="13" width="1.4" height="6"/><rect x="11.6" y="4.5" width=".8" height="15"/><circle cx="16.4" cy="5.6" r="1.7"/><path d="M15.2 8h2.4l2.3 7.2h-7z"/><rect x="14.9" y="14.6" width="1.3" height="4.4"/><rect x="16.6" y="14.6" width="1.3" height="4.4"/></g></symbol>
+  <symbol id="i-zoom" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></g></symbol>
+  <symbol id="i-church" viewBox="0 0 24 24"><path fill="#fff" d="M11 1h2v2.5h2v2h-2V8l5 4v10h-5v-5a2 2 0 0 0-4 0v5H4V12l5-4V5.5H7v-2h4z"/></symbol>
+</svg>
+
+<header>
+  <div class="eyebrow">천주교 제주교구 서문성당 순례길</div>
+  <h1>서문 올레 코스 지도</h1>
+  <p>두 코스 모두 서문성당에서 출발해 서문성당으로 돌아옵니다</p>
+</header>
+
+<nav class="tabs" role="tablist"><div class="wrap">
+  <button class="short" role="tab" data-t="short">짧은 코스</button>
+  <button class="long" role="tab" data-t="long">긴 코스</button>
+</div></nav>
+
+<main class="wrap">
+<section id="c-short" data-k="short">
+  <div class="stat"><b>약 5.38km</b><span>· 1시간 10분</span></div>
+  <p class="desc">신앙의 흔적을 따라 걷고, 해안길과 역사의 자취를 만나는 길입니다.</p>
+  <button class="map" data-title="짧은 코스 지도"><img src="images/map_short.jpg" alt="짧은 코스 지도" width="1559" height="1708"></button>
+  <button class="bigbtn" data-open="short"><svg><use href="#i-zoom"/></svg>지도 크게 보기</button>
+  <p class="tip">누르면 화면 가득 열리고, 두 손가락으로 확대할 수 있어요</p>
+  <div class="legend">
+    <span><i class="mk gold" style="width:20px;height:20px;font-size:11px">1</i>신앙의 자리</span>
+    <span><i class="mk" style="width:20px;height:20px;font-size:11px">4</i>마을과 기억의 자리</span>
+    <span><svg width="18" height="18"><use href="#i-wc"/></svg>화장실</span>
+  </div>
+  <h2>걷는 순서</h2>
+  <ol class="route" id="list-short"></ol>
+</section>
+
+<section id="c-long" data-k="long">
+  <div class="stat"><b>약 10.87km</b><span>· 2시간 30분</span></div>
+  <p class="desc">신앙의 흔적과 해안길을 따라 걷고, 제주의 아픈 기억이 머무는 4·3 유해발굴터와 예비검속 희생자 위령비를 만나는 길입니다.</p>
+  <button class="map" data-title="긴 코스 지도"><img src="images/map_long.jpg" alt="긴 코스 지도" width="1533" height="1708"></button>
+  <button class="bigbtn" data-open="long"><svg><use href="#i-zoom"/></svg>지도 크게 보기</button>
+  <p class="tip">누르면 화면 가득 열리고, 두 손가락으로 확대할 수 있어요</p>
+  <div class="legend">
+    <span><i class="mk gold" style="width:20px;height:20px;font-size:11px">3</i>신앙의 자리</span>
+    <span><i class="mk" style="width:20px;height:20px;font-size:11px">9</i>마을과 기억의 자리</span>
+    <span><svg width="18" height="18"><use href="#i-wc"/></svg>화장실</span>
+  </div>
+  <h2>걷는 순서</h2>
+  <ol class="route" id="list-long"></ol>
+</section>
+</main>
+
+<footer>천주교 제주교구 서문성당 · 서문 올레</footer>
+
+<div id="viewer" role="dialog" aria-modal="true" aria-label="지도 크게 보기">
+  <div class="bar"><span id="vt">지도</span><button class="close" id="vclose">✕ 닫기</button></div>
+  <div id="stage"><img id="vimg" alt=""><div class="hint" id="vhint">두 손가락으로 벌려 확대 · 끌어서 이동</div></div>
+  <div class="ctl"><button id="zout" aria-label="축소">－</button><button class="fit" id="zfit">화면 맞춤</button><button id="zin" aria-label="확대">＋</button></div>
+</div>
+
+<script>
+/* 코스 데이터 — 리플렛과 동일 */
+const WC='<span class="wc"><svg><use href="#i-wc"/></svg>화장실</span>';
+const DATA={
+ short:[
+  {h:1,n:'서문성당',wc:1,note:'출발'},
+  {d:'403m',k:1,g:1,n:'용담1동주민센터',note:'옛 까마귀 수녀원 터'},
+  {d:'245m',k:2,g:1,n:'용담새마을금고',note:'옛 서문성당 터'},
+  {d:'492m',k:4,n:'서문공설시장',note:'60년 역사의 전통 재래시장'},
+  {d:'310m',k:5,n:'제주향교',wc:1,note:'조선시대 지방관립학교'},
+  {d:'201m',w:1,n:'청소년문화의집'},
+  {d:'600m',k:7,n:'용연다리 입구',note:'용연계곡'},
+  {d:'200m',k:6,n:'서자복',note:'옛 제주성 서쪽을 지키던 미륵'},
+  {d:'200m',w:1,n:'용연다리 건너기'},
+  {d:'42m',k:7,n:'용두암',wc:1,note:'용이 머리를 쳐든 듯한 바위'},
+  {d:'301m',k:3,g:1,n:'성 골롬반 사제관',note:'제주 복음화에 힘쓴 외방선교회'},
+  {d:'350m',k:8,n:'용담 지석묘 2호',note:'청동기~초기 철기시대 고인돌'},
+  {d:'727m',w:1,n:'용담 킹마트'},
+  {d:'1.3km',h:1,n:'서문성당',wc:1,note:'도착'}
+ ],
+ long:[
+  {h:1,n:'서문성당',wc:1,note:'출발'},
+  {d:'약 3.0km',k:3,g:1,n:'성 골롬반 사제관',note:'여기까지는 짧은 코스와 같은 길 (제주향교·용두암 화장실)'},
+  {d:'350m',w:1,n:'용담레포츠공원',wc:1},
+  {d:'1.3km',k:9,n:'공항 4·3 유해 발굴터',note:'옛 정뜨르 비행장, 4·3 집단학살터'},
+  {d:'2km',w:1,n:'어영공원',wc:1},
+  {d:'1.4km',k:10,n:'예비검속 희생자 위령비',note:'1950년 예비검속 희생자를 기리는 곳'},
+  {d:'200m',w:1,n:'용담레포츠공원 입구'},
+  {d:'2km',k:8,n:'용담 지석묘 5호',note:'청동기~초기 철기시대 고인돌'},
+  {d:'628m',h:1,n:'서문성당',wc:1,note:'도착'}
+ ]
+};
+for(const key in DATA){
+  document.getElementById('list-'+key).innerHTML=DATA[key].map(s=>{
+    const mk=s.h?'<i class="mk home"><svg><use href="#i-church"/></svg></i>'
+           :s.w?'<i class="mk wp"></i>'
+           :`<i class="mk${s.g?' gold':''}">${s.k}</i>`;
+    return `<li>${mk}<div class="body">${s.d?`<div class="dist">${s.d}</div>`:''}<div class="name"><span class="${s.h?'home-name':''}">${s.n}</span>${s.wc?WC:''}</div>${s.note?`<div class="note">${s.note}</div>`:''}</div></li>`;
+  }).join('');
+}
+
+/* 탭: #short / #long 주소로 바로 열림 (QR) */
+function show(t){
+  document.querySelectorAll('section').forEach(s=>s.classList.toggle('on',s.dataset.k===t));
+  document.querySelectorAll('.tabs button').forEach(b=>b.setAttribute('aria-selected',b.dataset.t===t));
+  document.querySelector('meta[name=theme-color]').content=t==='long'?'#E0601F':'#006FBF';
+}
+const route=()=>show(location.hash==='#long'?'long':'short');
+document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{history.replaceState(null,'','#'+b.dataset.t);route();scrollTo({top:0,behavior:'smooth'})});
+addEventListener('hashchange',route); route();
+
+/* 크게 보기: 두 손가락 확대·끌어서 이동·두 번 탭 확대 */
+const V=document.getElementById('viewer'),ST=document.getElementById('stage'),I=document.getElementById('vimg'),H=document.getElementById('vhint');
+let s=1,x=0,y=0,fit=1; const pts=new Map(); let last=null;
+function apply(){I.style.transform=`translate(${x}px,${y}px) scale(${s})`}
+function clamp(){const w=I.naturalWidth*s,h=I.naturalHeight*s,W=ST.clientWidth,Hh=ST.clientHeight;
+  x=w<=W?(W-w)/2:Math.min(0,Math.max(W-w,x)); y=h<=Hh?(Hh-h)/2:Math.min(0,Math.max(Hh-h,y));}
+function zoomAt(ns,cx,cy){ns=Math.max(fit,Math.min(fit*6,ns));x=cx-(cx-x)*ns/s;y=cy-(cy-y)*ns/s;s=ns;clamp();apply()}
+function doFit(){fit=Math.min(ST.clientWidth/I.naturalWidth,ST.clientHeight/I.naturalHeight);s=fit;x=y=0;clamp();apply()}
+function open(key){
+  const img=document.querySelector('#c-'+key+' .map img');
+  document.getElementById('vt').textContent=key==='long'?'긴 코스 지도':'짧은 코스 지도';
+  V.classList.add('on');document.body.style.overflow='hidden';H.style.opacity=1;setTimeout(()=>H.style.opacity=0,2600);
+  const go=()=>{doFit();zoomAt(fit*1.6,ST.clientWidth/2,ST.clientHeight/2)};
+  if(I.src.endsWith(img.getAttribute('src'))&&I.complete)go();else{I.onload=go;I.src=img.getAttribute('src')}
+}
+function close(){V.classList.remove('on');document.body.style.overflow=''}
+document.querySelectorAll('.map').forEach(b=>b.onclick=()=>open(b.closest('section').dataset.k));
+document.querySelectorAll('.bigbtn').forEach(b=>b.onclick=()=>open(b.dataset.open));
+document.getElementById('vclose').onclick=close;
+addEventListener('keydown',e=>{if(e.key==='Escape')close()});
+document.getElementById('zin').onclick=()=>zoomAt(s*1.5,ST.clientWidth/2,ST.clientHeight/2);
+document.getElementById('zout').onclick=()=>zoomAt(s/1.5,ST.clientWidth/2,ST.clientHeight/2);
+document.getElementById('zfit').onclick=doFit;
+addEventListener('resize',()=>{if(V.classList.contains('on')){const r=s/fit;doFit();zoomAt(fit*r,ST.clientWidth/2,ST.clientHeight/2)}});
+const rel=e=>{const r=ST.getBoundingClientRect();return{x:e.clientX-r.left,y:e.clientY-r.top}};
+let lastTap=0;
+ST.addEventListener('pointerdown',e=>{ST.setPointerCapture(e.pointerId);pts.set(e.pointerId,rel(e));last=null;
+  if(pts.size===1){const now=Date.now();if(now-lastTap<300){const p=rel(e);zoomAt(s<fit*2.5?s*2:fit,p.x,p.y)}lastTap=now}});
+ST.addEventListener('pointermove',e=>{if(!pts.has(e.pointerId))return;const prev=pts.get(e.pointerId),p=rel(e);pts.set(e.pointerId,p);
+  if(pts.size===1){x+=p.x-prev.x;y+=p.y-prev.y;clamp();apply()}
+  else if(pts.size===2){const [a,b]=[...pts.values()];const d=Math.hypot(a.x-b.x,a.y-b.y),c={x:(a.x+b.x)/2,y:(a.y+b.y)/2};
+    if(last){x+=c.x-last.c.x;y+=c.y-last.c.y;zoomAt(s*d/last.d,c.x,c.y)}last={d,c}}});
+['pointerup','pointercancel'].forEach(t=>ST.addEventListener(t,e=>{pts.delete(e.pointerId);last=null}));
+ST.addEventListener('wheel',e=>{e.preventDefault();const p=rel(e);zoomAt(s*(e.deltaY<0?1.15:1/1.15),p.x,p.y)},{passive:false});
+</script>
+</body>
+</html>
