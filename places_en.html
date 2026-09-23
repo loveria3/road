@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Seomun Olle · Places Along the Way</title>
+<meta name="description" content="A pilgrimage walk of Seomun Catholic Church, Catholic Diocese of Jeju — the stories of 10 places along the way">
+<meta property="og:title" content="Seomun Olle · Places Along the Way">
+<meta property="og:description" content="Introducing 10 places: places of faith, and places of neighbors and memory">
+<meta name="theme-color" content="#1E3A5F">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1E3A5F;--gold:#B38A45;--ink:#1D2B3A;--sub:#5B6776;--bg:#FBF8F2;--card:#fff;--line:#E9E2D5;--quote:#F3ECE0}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{font-family:'Noto Sans KR',system-ui,sans-serif;background:var(--bg);color:var(--ink);font-size:17px;line-height:1.7;word-break:normal;overflow-wrap:break-word}
+.wrap{max-width:680px;margin:0 auto;padding:0 16px}
+
+.lang{position:absolute;top:16px;right:16px;font-size:14px;font-weight:700;color:var(--navy);text-decoration:none;border:1.5px solid var(--navy);border-radius:999px;padding:4px 13px;line-height:1.4;background:#fff}
+header{padding:34px 0 18px;position:relative}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:.28em;color:var(--gold)}
+h1{font-size:30px;font-weight:900;color:var(--navy);line-height:1.3;margin-top:6px}
+.bar{width:44px;height:4px;background:var(--gold);border-radius:2px;margin:14px 0 16px}
+.lead{color:var(--sub);font-size:16px}
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:14px;font-size:14px;color:var(--sub)}
+.legend span{display:inline-flex;align-items:center;gap:7px}
+.dot{width:12px;height:12px;border-radius:50%;display:inline-block}
+.maps{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.maplink{display:inline-block;font-size:15px;font-weight:700;color:var(--navy);text-decoration:none;border:1.5px solid var(--navy);border-radius:999px;padding:7px 16px}
+
+/* 목차 */
+nav.toc{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 6px}
+nav.toc a{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:15px;color:#fff;background:var(--navy);text-decoration:none}
+nav.toc a.gold{background:var(--gold)}
+
+article{background:var(--card);border-radius:18px;overflow:hidden;margin:18px 0;box-shadow:0 2px 12px rgba(30,58,95,.08);scroll-margin-top:12px}
+.photos{display:grid;gap:3px;background:var(--line)}
+.photos.two{grid-template-columns:1fr 1fr}
+.photos figure{position:relative;aspect-ratio:16/10;overflow:hidden;background:#EEE8DC}
+.photos.two figure{aspect-ratio:4/5}
+.photos img{width:100%;height:100%;object-fit:cover;display:block}
+.photos figcaption{position:absolute;left:8px;bottom:8px;font-size:12px;font-weight:700;color:#fff;background:rgba(0,0,0,.45);padding:2px 9px;border-radius:999px}
+.body{padding:18px 20px 22px}
+.tag{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:700;letter-spacing:.04em}
+.no{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:15px;flex:none}
+.faith .no{background:var(--gold)} .faith .tag{color:var(--gold)}
+.memory .no{background:var(--navy)} .memory .tag{color:var(--navy)}
+h2{font-size:22px;font-weight:900;color:var(--navy);line-height:1.35;margin-top:10px}
+.loc{font-size:14px;color:var(--sub);margin:2px 0 12px}
+.body p{margin-bottom:10px}
+.body ul{margin:0 0 10px 18px}
+.body li{margin-bottom:4px}
+.reflect{background:var(--quote);border-left:4px solid var(--gold);border-radius:4px 12px 12px 4px;padding:12px 14px;margin-top:14px;font-size:15.5px}
+.reflect b{display:block;font-size:13px;color:#8A6A33;letter-spacing:.04em;margin-bottom:2px}
+
+.closing{text-align:center;background:var(--quote);border-radius:18px;padding:24px 20px;margin:26px 0 0}
+.closing strong{display:block;font-size:19px;color:var(--navy);margin-bottom:6px}
+.closing p{color:var(--sub);font-size:15.5px}
+footer{text-align:center;color:var(--sub);font-size:14px;padding:26px 16px 36px}
+footer .ver{margin-top:6px;font-size:12px;opacity:.7}
+.top{position:fixed;right:16px;bottom:18px;width:46px;height:46px;border-radius:50%;border:0;background:var(--navy);color:#fff;font-size:20px;box-shadow:0 2px 10px rgba(0,0,0,.2);opacity:0;pointer-events:none;transition:opacity .3s}
+.top.on{opacity:.9;pointer-events:auto}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <a class="lang" href="places.html" lang="ko" hreflang="ko">한국어</a>
+  <div class="eyebrow">SEOMUN OLLE · PLACES</div>
+  <h1>Places Along the Way</h1>
+  <div class="bar"></div>
+  <p class="lead">On this walk, which begins and ends at Seomun Catholic Church, you will encounter traces of faith, the lives of our neighbors, and the painful history of Jeju, one after another.</p>
+  <div class="legend">
+    <span><i class="dot" style="background:var(--gold)"></i>Places of Faith</span>
+    <span><i class="dot" style="background:var(--navy)"></i>Places of Neighbors &amp; Memory</span>
+    <span>Numbers match those on the course map</span>
+  </div>
+  <nav class="toc" aria-label="Jump to a place">
+    <a class="gold" href="#p1">1</a><a class="gold" href="#p2">2</a><a class="gold" href="#p3">3</a>
+    <a href="#p4">4</a><a href="#p5">5</a><a href="#p6">6</a><a href="#p7">7</a><a href="#p8">8</a><a href="#p9">9</a><a href="#p10">10</a>
+  </nav>
+</header>
+
+<main>
+<article id="p1" class="faith">
+  <div class="photos"><figure><img src="images/places/p01.jpg" alt="Site of the former Caritas convent" loading="lazy"></figure></div>
+  <div class="body">
+    <div class="tag"><span class="no">1</span>Place of Faith</div>
+    <h2>Site of the Former Caritas Convent</h2>
+    <div class="loc">Now the Yongdam 1-dong Community Center</div>
+    <p>A convent of the Sisters of Charity of Jesus (the Caritas Sisters) once stood here. The congregation came to Korea in 1956 and has served local churches and neighbors through parish ministry, kindergarten education, and social welfare work. The building is gone and a community center now stands in its place, but this is where the faith community of Yongdam took root.</p>
+    <div class="reflect"><b>Reflect as You Walk</b>Pause for a moment and remember those who once prayed quietly for this neighborhood.</div>
+  </div>
+</article>
+
+<article id="p2" class="faith">
+  <div class="photos"><figure><img src="images/places/p02.jpg?v=2" alt="Site of the former Seomun Church" loading="lazy" style="object-position:50% 22%"></figure></div>
+  <div class="body">
+    <div class="tag"><span class="no">2</span>Place of Faith</div>
+    <h2>Site of the Former Seomun Church</h2>
+    <div class="loc">Now the Yongdam Saemaul Geumgo (MG Community Credit Cooperative)</div>
+    <p>Before the present church was built in 1994, the early Seomun Church community gathered here to celebrate Mass. Seomun Parish was separated from Jungang Cathedral, the first church of the Diocese of Jeju, and was established on June 30, 1977, as the diocese’s tenth parish. The journey of faith that began with a small community continues today at Seomun Catholic Church.</p>
+    <div class="reflect"><b>Reflect as You Walk</b>Think of the hearts of the believers who first gathered here.</div>
+  </div>
+</article>
+
+<article id="p3" class="faith">
+  <div class="photos"><figure><img src="images/places/p03.jpg" alt="St. Columban Rectory" loading="lazy"></figure></div>
+  <div class="body">
+    <div class="tag"><span class="no">3</span>Place of Faith</div>
+    <h2>St. Columban Rectory (Missionary Society of St. Columban)</h2>
+    <div class="loc">A place of the missionaries who helped bring the Gospel to Jeju</div>
+    <p>The Missionary Society of St. Columban was founded in Ireland in 1916 and came to Korea in 1933. <b>The late Archbishop Harold Henry (Korean name: Hyeon Harold)</b>, whom Seomun Church commemorates, was also a Columban missionary. In 1971 he became the Prefect Apostolic of Jeju, the first head of the local church, and laid the foundations of the Diocese of Jeju.</p>
+    <p>In the hard years after the war, Columban priests built churches on Jeju and developed a ranch, medical care, and welfare facilities, caring for both the faith and the daily lives of the islanders.</p>
+    <div class="reflect"><b>Reflect as You Walk</b>Remember the dedication of the missionaries who came from a distant land and gave their lives to this island.</div>
+  </div>
+</article>
+
+<article id="p4" class="memory">
+  <div class="photos"><figure><img src="images/places/p04.jpg" alt="Seomun Public Market" loading="lazy"></figure></div>
+  <div class="body">
+    <div class="tag"><span class="no">4</span>Place of Neighbors &amp; Memory</div>
+    <h2>Seomun Public Market</h2>
+    <div class="loc">A traditional market with 60 years of history in western Jeju City</div>
+    <p>Located just outside the west gate of old Jeju Fortress, Seomun Public Market has supplied the neighborhood’s daily needs for more than 60 years. It is especially known as a <b>market specializing in meat</b>: you can buy meat from one of its butchers and have it grilled right away at a restaurant inside the market.</p>
+    <p>With shops selling dried seafood, fruit, and side dishes, it offers a close look at the simple everyday life of the people of Jeju.</p>
+    <div class="reflect"><b>Reflect as You Walk</b>Greet the merchants, and remember that love begins with paying attention to our neighbors’ lives.</div>
+  </div>
+</article>
+
+<article id="p5" class="memory">
+  <div class="photos"><figure><img src="images/places/p05.jpg" alt="Jeju Hyanggyo" loading="lazy"></figure></div>
+  <div class="body">
+    <div class="tag"><span class="no">5</span>Place of Neighbors &amp; Memory</div>
+    <h2>Jeju Hyanggyo (Confucian School)</h2>
+    <div class="loc">A government-run school established in the provinces during the Joseon Dynasty</div>
+    <p>Jeju Hyanggyo was first founded in 1394 (the 3rd year of King Taejo of Joseon) and, after moving five times, settled at its current site in 1827 (the 27th year of King Sunjo). Its <b>Daeseongjeon</b> shrine, which enshrines the spirit tablets of Confucius and other sages, preserves the distinctive features of Jeju architecture and was designated a <b>Treasure</b>, a national heritage of Korea, in 2016.</p>
+    <p>Originally, the Myeongnyundang lecture hall, the place of learning, stood in front, with the Daeseongjeon, the place of ancestral rites, behind it. When Jeju Middle School was built, the lecture hall was moved, resulting in the present layout.</p>
+    <div class="reflect"><b>Reflect as You Walk</b>Here, where teaching and learning have carried on for centuries, ask yourself what learning means to you today.</div>
+  </div>
+</article>
+
+<article id="p6" class="memory">
+  <div class="photos"><figure><img src="images/places/p06.jpg" alt="Seojabok" loading="lazy" style="object-position:50% 0%"></figure></div>
+  <div class="body">
+    <div class="tag"><span class="no">6</span>Place of Neighbors &amp; Memory</div>
+    <h2>Seojabok</h2>
+    <div class="loc">A Maitreya statue at Yonghwasa Temple that guarded old Jeju Fortress from the west</div>
+    <p>Seojabok is a <b>basalt stone Buddha</b> standing in the grounds of Yonghwasa Temple, an imposing 273 cm tall. It is believed to date from the late Goryeo period, and the brimmed hat on its head appears to have been added in the late Joseon period.</p>
+    <p>Also called Boksin Mireuk or Seo Mireuk (the Western Maitreya), it is thought to have served, together with its pair <b>Dongjabok</b> to the east of Jeju Fortress, as a guardian protecting the town within the walls. From long ago, people have prayed to it for the birth of a son, for protection from disease, and for safety and a good catch at sea. It is designated as Folklore Cultural Heritage of Jeju Special Self-Governing Province.</p>
+    <div class="reflect"><b>Reflect as You Walk</b>Standing where neighbors prayed with their own earnest hopes, hold a respectful heart toward one another’s lives.</div>
+  </div>
+</article>
+
+<article id="p7" class="memory">
+  <div class="photos two">
+    <figure><img src="images/places/p07a.jpg" alt="Yongyeon Gorge and Yongyeon Bridge" loading="lazy"><figcaption>Yongyeon Gorge</figcaption></figure>
+    <figure><img src="images/places/p07b.jpg" alt="Yongduam" loading="lazy"><figcaption>Yongduam</figcaption></figure>
+  </div>
+  <div class="body">
+    <div class="tag"><span class="no">7</span>Place of Neighbors &amp; Memory</div>
+    <h2>Yongyeon Gorge (Yongyeon Bridge) · Yongduam</h2>
+    <div class="loc">A pond where a dragon is said to have lived, and a rock shaped like a dragon raising its head</div>
+    <p><b>Yongyeon</b> (“Dragon Pond”) is a deep pool at the mouth of the Hancheon Stream, formed where fresh water mixes with seawater. For its screen-like cliffs and clear water it was also called Chwibyeongdam. <b>“Yongyeon Yabeom”</b>, the scene of scholars of old floating boats here on moonlit nights, is counted among the Twelve Scenic Views of Yeongju (old Jeju). Legend has it that during a great drought, a rain ritual held here brought rain. Today the <b>Yongyeon Suspension Bridge</b> spans the gorge.</p>
+    <p><b>Yongduam</b> (Dragon Head Rock) is a rock about 10 m high on the shore, about 200 m west of Yongyeon. Formed from hardened lava and carved by the waves over many years, it looks like a dragon lifting its head toward the sky. Yongyeon and Yongduam were designated as Monuments of Jeju Special Self-Governing Province in 2001.</p>
+    <div class="reflect"><b>Reflect as You Walk</b>Pause before the nature God has shaped, catch your breath, and offer a prayer of thanks.</div>
+  </div>
+</article>
+
+<article id="p8" class="memory">
+  <div class="photos two">
+    <figure><img src="images/places/p08a.jpg" alt="Yongdam Dolmen No. 2" loading="lazy"><figcaption>No. 2</figcaption></figure>
+    <figure><img src="images/places/p08b.jpg" alt="Yongdam Dolmen No. 5" loading="lazy"><figcaption>No. 5</figcaption></figure>
+  </div>
+  <div class="body">
+    <div class="tag"><span class="no">8</span>Place of Neighbors &amp; Memory</div>
+    <h2>Yongdam Dolmens No. 2 · No. 5</h2>
+    <div class="loc">Dolmens (tombs) from the Bronze Age or the Early Iron Age</div>
+    <p>The dolmens scattered around the Hancheon Stream in Yongdam-dong are tombs built between the late Bronze Age and the Early Iron Age. They are larger and more varied in form than other dolmens on Jeju.</p>
+    <ul>
+      <li><b>No. 2</b> — Its capstone is 155 cm long and 124 cm wide, supported by three stone slabs.</li>
+      <li><b>No. 5</b> — A large dolmen with a capstone 320 cm long and 255 cm wide; seven <b>cup marks</b> (small carved hollows) remain on its top surface.</li>
+    </ul>
+    <div class="reflect"><b>Reflect as You Walk</b>Remember that people have lived on this land for thousands of years, and honor the lives of the generations before us.</div>
+  </div>
+</article>
+
+<article id="p9" class="memory">
+  <div class="photos"><figure><img src="images/places/p09.jpg" alt="Area around Jeju International Airport" loading="lazy"></figure></div>
+  <div class="body">
+    <div class="tag"><span class="no">9</span>Place of Neighbors &amp; Memory</div>
+    <h2>Jeju 4·3 Remains Excavation Site at the Airport</h2>
+    <div class="loc">Inside Jeju International Airport (former Jeongtteureu Airfield) · a site of mass killings during Jeju 4·3</div>
+    <p>Today’s Jeju International Airport began as <b>Jeongtteureu Airfield</b>, built by imperial Japan for military use in the early 1940s. During Jeju 4·3 (the Jeju April 3 Incident), many residents were killed here, and in October 1949, 249 people sentenced to death by military courts were executed here en masse. About 500 residents are also known to have been killed here during the preventive detention right after the Korean War broke out.</p>
+    <p>Excavations from 2007 to 2009 recovered the remains of <b>more than 380 people</b>; over 130 of them were identified through DNA testing and returned to their families. More remains are believed to still lie beneath the runway.</p>
+    <div class="reflect"><b>Reflect as You Walk</b>Beneath this place, where planes take off and land every day, lie those who were lost. Pause here for a moment of silent prayer for them.</div>
+  </div>
+</article>
+
+<article id="p10" class="memory">
+  <div class="photos"><figure><img src="images/places/p10.jpg" alt="Memorial to the Victims of Preventive Detention" loading="lazy"></figure></div>
+  <div class="body">
+    <div class="tag"><span class="no">10</span>Place of Neighbors &amp; Memory</div>
+    <h2>Memorial to the Victims of Preventive Detention</h2>
+    <div class="loc">A memorial to the victims of the 1950 preventive detention</div>
+    <p>When the Korean War broke out in 1950, many residents of Jeju were taken away under the name of “preventive detention” and killed without trial. This memorial was erected to honor those from the northern part of Jeju who lost their lives unjustly at that time, and in the hope that such a tragedy will never happen again.</p>
+    <div class="reflect"><b>Reflect as You Walk</b>Pray for the victims and their families, and consider our part in keeping Jeju an island of peace.</div>
+  </div>
+</article>
+
+<div class="closing">
+  <strong>Seomun Olle is the path that connects all of these places.</strong>
+  <p>Walk slowly once more through a neighborhood you used to hurry past,<br>and meet prayer, memory, and neighbors all in one place.</p>
+</div>
+</main>
+
+<footer>
+  Seomun Catholic Church Office, Catholic Diocese of Jeju · +82-64-753-2979<br>25 Namseong-ro 11-gil, Jeju-si, Jeju
+  <div class="ver">V1</div>
+</footer>
+</div>
+
+<button class="top" id="top" aria-label="Back to top">↑</button>
+<script>
+const t=document.getElementById('top');
+addEventListener('scroll',()=>t.classList.toggle('on',scrollY>600),{passive:true});
+t.onclick=()=>scrollTo({top:0,behavior:'smooth'});
+document.querySelectorAll('a.lang').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();location.href=a.getAttribute('href')+(location.hash||'')}));
+</script>
+</body>
+</html>
